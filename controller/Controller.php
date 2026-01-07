@@ -1,0 +1,31 @@
+<?php
+class Controller {
+    public static function StartSite() {
+        $arr = MasterClasses::getMasterClasses();
+        include_once 'view/start.php';
+    }
+
+    public static function AllCategory() {
+        $arr = Category::getAllCategory();
+        include_once 'view/category.php';
+    }
+
+    public static function AllMasterClasses() {
+        $arr = MasterClasses::getAllMasterClasses();
+        include_once 'view/allmasterclasses.php';
+    }
+
+    public static function MasterClassesByCatID($id) {
+        $arr = MasterClasses::getMasterClassesByCategoryID($id);
+        include_once 'view/catmasterclasses.php';
+    }
+
+    public static function MasterClassesByID($id) {
+        $n = MasterClasses::getMasterClassesByID($id);
+        include_once 'view/readmasterclasses.php';
+    }
+
+    public static function error404() {
+        include_once 'view/error404.php';
+    }
+}
