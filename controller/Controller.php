@@ -28,4 +28,24 @@ class Controller {
     public static function error404() {
         include_once 'view/error404.php';
     }
+
+    public static function InsertReview($c, $id) {
+        Reviews::InsertReview ($c, $id);
+        header('Location:masterclasses?id='.$id.'#ctable');
+    }
+
+    public static function Reviews ($newsid) {
+        $arr = Reviews::getReviewsByClassesID ($newsid);
+        ViewReviews::ReviewsByClasses($arr);
+    }
+
+    public static function ReviewsCount($newsid) {
+        $arr = Reviews::getReviewsCountByClassesID($newsid);
+        ViewReviews::ReviewsCount($arr);
+    }
+
+    public static function ReviewsCountWithAncor ($newsid) {
+        $arr = Reviews::getReviewsCountByClassesID($newsid);
+        ViewReviews::ReviewsCountWithAncor($arr);
+    }
 }

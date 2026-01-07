@@ -15,6 +15,9 @@ if($path == '' OR $path == 'index' OR $path == 'index.php') {
 } elseif ($path == 'masterclass' and isset($_GET['id'])) {
     $response = Controller::MasterClassesByID($_GET['id']);
 
+} elseif ($path == 'insertreview' and isset ($_GET['review'], $_GET['id'])) {
+    $response = Controller::InsertReview($_GET['review'], $_GET['id']);
+
 } else {
     $response = Controller::error404();
 }
