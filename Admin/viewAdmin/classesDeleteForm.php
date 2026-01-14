@@ -3,7 +3,7 @@
 <div class="conteiner" style="min-height: 400px;">
     <div class="col-md-11">
 
-    <h2>Master classes edit</h2>
+    <h2>Master classes delete</h2>
 
     <?php
         if(isset($test)) {
@@ -11,7 +11,7 @@
     ?>
 
     <div class="alert alert-info">
-        <strong>Запись изменина.</strong> <a href="masterclassesAdmin">Список новостей</a>
+        <strong>Запись удалена.</strong> <a href="masterclassesAdmin">Список новостей</a>
     </div>
 
     <?php
@@ -19,7 +19,7 @@
     ?>
 
     <div class="alert alert-warning">
-        <strong>Ошибка изменения записи!</strong> <a href="masterclassesAdmin">Список новостей</a>
+        <strong>Ошибка удаления записи!</strong> <a href="masterclassesAdmin">Список новостей</a>
     </div>
 
     <?php
@@ -27,10 +27,10 @@
         } else {
     ?>
 
-    <form action="masterclassesEditResult?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
+    <form action="masterclassesDeleteResult?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
         <table class="table table-bordered">
             <tr>
-                <td>Master class title</td>
+                <td>Master classes title</td>
                 <td><input type="text" name="title" class="form-control" required value="<?php echo $detail['title']; ?>"></td>
             </tr>
             <tr>
@@ -64,7 +64,6 @@
                         </option>
                     </select>
                 </td>
-
             </tr>
             <td>Old Picture</td>
             <td><div>
@@ -77,6 +76,7 @@
                 </div></td>
             </tr>
             <tr>
+            <tr>
                 <tr>
                 <td>Price</td>
                 <td><input type="price" name="price" class="form-control" required value="<?php echo $detail['price']; ?>"> </td>
@@ -88,7 +88,7 @@
             <tr>
                 <td colspan="2">
                     <button type="submit" class="btn btn-primary" name="save">
-                        <span class="glyphicon glyphicon-plus"></span> Изменить
+                        <span class="glyphicon glyphicon-plus"></span> Удалить
                     </button>
                     <a href="masterclassesAdmin" class="btn btn-large btn-success">
                         <i class="glyphicon glyphicon-backward"></i> &nbsp; Назад к списку

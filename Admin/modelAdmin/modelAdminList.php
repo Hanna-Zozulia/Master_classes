@@ -76,4 +76,17 @@ class modelAdminList {
         }
         return $test;
     }
+
+    public static function getClassesDelete($id) {
+        $test = false;
+        if (isset($_POST['save'])) {
+            $sql = "DELETE FROM `masterclass` WHERE `masterclass`.`id` = ".$id;
+            $db = new Database();
+            $item = $db->executeRun($sql);
+            if($item == true) {
+                $test = true;
+            }
+        }
+        return $test;
+    }
 }

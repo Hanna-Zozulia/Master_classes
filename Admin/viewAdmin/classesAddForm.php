@@ -40,7 +40,8 @@
             <tr>
                 <td>Category</td>
                 <td>
-                    <select name="idCategory" class="form-control">
+                    <select name="idCategory" class="form-control" required>
+                        <option value="">Select the category</option>
                         <?php
                         foreach($arr as $row) {
                             echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
@@ -53,9 +54,9 @@
             <tr>
                 <td>Format</td>
                 <td>
-                    <select name="format">
+                    <select name="format" required>
                         <option value="">Select the format</option>
-                        <option value="online">Online</option>
+                        <option value="online" >Online</option>
                         <option value="offline">Offline</option>
                     </select>
                 </td>

@@ -9,8 +9,9 @@
         <table class="table table-bordered table-responsive">
             <tr>
                 <th width="10%">ID</th>
-                <th width="70%">Header List</th>
-                <th width="20%"></th>
+                <th width="60%">Header List</th>
+                <th width="10%"></th>
+                <th width="10%"></th>
             </tr>
 
             <?php
@@ -19,14 +20,15 @@
                         echo '<td>'.$row['id'].'</td>';
                         echo '<td><b>Title: </b>'.$row['title'].'<br>';
                             echo '<b>Category: </b><i>'.$row['category_id'].'</i><br>';
-                            echo '<b>Author: </b><i>'.$row['user_id'].'</i>';
+                            echo '<b>Author: </b><i>'.$row['user_id'].'</i><br>';
+                            echo '<b>Date: </b><i>'.$row['date'].'</i>';
                         echo '</td>';
                         echo '<td>'.$row['price'].'</td>';
                         echo '<td>'.$row['format'].'</td>';
-                        echo '<td>'.$row['date'].'</td>';
+                        
                         echo '<td>
-                                <a href="masterclassesEdit?id='.$row['id'].'">Edit<span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-                                <a href="masterclassesDel?id='.$row['id'].'">Delete<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                <a href="masterclassesEdit?id='.$row['id'].'">Edit <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                                <a href="masterclassesDelete?id='.$row['id'].'">Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
                             </td>';              
                     echo '</tr>';
                 }

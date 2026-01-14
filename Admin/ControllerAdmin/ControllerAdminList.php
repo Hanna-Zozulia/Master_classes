@@ -26,5 +26,15 @@ class controllerAdminList {
         include_once('viewAdmin/classesEditForm.php');
     }
 
+    public static function classesDeleteForm($id) {
+        $arr = modelAdminCategory::getCategoryList();
+        $detail = modelAdminList::getClassesDetail($id);
+        include_once('viewAdmin/classesDeleteForm.php');
+    }
+
+    public static function classesDeleteResult($id) {
+        $test = modelAdminList::getClassesDelete($id);
+        include_once('viewAdmin/classesDeleteForm.php');
+    }
 }
 ?>
