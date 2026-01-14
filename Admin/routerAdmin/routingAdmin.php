@@ -12,6 +12,15 @@ if ($path == '' OR $path == 'index.php') {
 } elseif ($path == 'logout') {
     $response = controllerAdmin::logoutAction();
 
+} elseif ($path == 'masterclassesAdmin') {
+    $response = controllerAdminList::ClassesList();
+
+} elseif ($path == 'masterclassesAdd') {
+    $response = controllerAdminList::classesAddForm();
+
+} elseif ($path == 'masterclassesAddResult') {
+    $response = controllerAdminList::classesAddResult();
+
 } else {
     $response = controllerAdmin::error404();
 }
