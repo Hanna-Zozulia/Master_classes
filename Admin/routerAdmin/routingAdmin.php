@@ -21,6 +21,12 @@ if ($path == '' OR $path == 'index.php') {
 } elseif ($path == 'masterclassesAddResult') {
     $response = controllerAdminList::classesAddResult();
 
+} elseif ($path == 'masterclassesEdit' && isset($_GET['id'])) {
+    $response = controllerAdminList::classesEditForm($_GET['id']);
+
+} elseif ($path == 'masterclassesEditResult' && isset($_GET['id']))  {
+    $response = controllerAdminList::classesEditResult($_GET['id']);
+
 } else {
     $response = controllerAdmin::error404();
 }
