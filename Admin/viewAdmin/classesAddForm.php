@@ -81,7 +81,7 @@
                     <button type="submit" class="btn btn-primary" name="save">
                         <span class="glyphicon glyphicon-plus"></span> Сохранить
                     </button>
-                    <a href="newsAdmin" class="btn btn-large btn-success">
+                    <a href="masterclassesAdmin" class="btn btn-large btn-success">
                         <i class="glyphicon glyphicon-backward"></i> &nbsp; Назад к списку
                     </a>
                 </td>
