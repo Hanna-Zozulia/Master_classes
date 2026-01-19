@@ -31,11 +31,11 @@ class Controller {
 
     public static function InsertReview($c, $id) {
         Reviews::InsertReview ($c, $id);
-        header('Location:masterclasses?id='.$id.'#ctable');
+        header('Location:masterclass?id='.$id.'#ctable');
     }
 
     public static function Reviews ($newsid) {
-        $arr = Reviews::getReviewsByClassesID ($newsid);
+        $arr = Reviews::getReviewsByClassesID($newsid);
         ViewReviews::ReviewsByClasses($arr);
     }
 
