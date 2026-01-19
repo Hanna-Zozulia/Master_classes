@@ -4,6 +4,7 @@ include_once 'inc/Database.php';
 require 'model/Category.php';
 require 'model/MasterClass.php';
 require 'model/Reviews.php';
+require 'model/Register.php';
 
 include_once 'view/masterclasses.php';
 include_once 'view/reviews.php';

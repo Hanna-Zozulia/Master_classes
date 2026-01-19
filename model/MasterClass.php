@@ -1,28 +1,28 @@
 <?php
 class MasterClasses {
     public static function getMasterClasses() {
-        $query = "SELECT * FROM masterclass ORDER BY id DESC LIMIT 3;";
+        $query = "SELECT * FROM masterclasses ORDER BY id DESC LIMIT 3;";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
 
     public static function getAllMasterClasses() {
-        $query = "SELECT * FROM `masterclass` ORDER BY id DESC;";
+        $query = "SELECT * FROM `masterclasses` ORDER BY id DESC;";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
 
     public static function getMasterClassesByCategoryID($id) {
-        $query = "SELECT * FROM `masterclass` where category_id=".(string)$id." ORDER BY id DESC;";
+        $query = "SELECT * FROM `masterclasses` WHERE category_id=".(string)$id." ORDER BY id DESC;";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
 
     public static function getMasterClassesByID($id) {
-        $query = "SELECT * FROM masterclass where id=".(string)$id;
+        $query = "SELECT * FROM masterclasses WHERE id=".(string)$id;
         $db = new Database();
         $n = $db->getOne($query);
         return $n;

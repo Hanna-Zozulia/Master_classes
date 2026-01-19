@@ -178,6 +178,74 @@ h1{
     display: inline-block;
 }
 
+.block {
+  height: 600px;
+  /* padding-left: 20px; */
+  background-color: red;
+}
+
+.h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+  background-color: #737272;
+}
+
+.h1 h1 {
+  background-color: #fff;
+}
+
+.h2 {
+  background-color: #9d2292;
+}
+
+.vertical-slider {
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 ряда */
+    gap: 20px;
+}
+
+/* карточка */
+.slide-card {
+  background: #fff;
+  /* text-align: center; */
+  text-decoration: none;
+  color: #000;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+}
+
+/* разная высота карточек */
+.slide-card img:nth-child(3n) {
+  height: 380px;
+}
+.slide-card img:nth-child(3n+1) {
+  height: 320px;
+}
+.slide-card img:nth-child(3n+2) {
+  height: 350px;
+}
+
+.slide-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes moveUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+.swiper-slide {
+  width: 50%;
+}
+
 .courselink{
     color: black;
     font-weight: 550;

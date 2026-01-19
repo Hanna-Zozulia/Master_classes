@@ -1,8 +1,13 @@
 <?php
 class Controller {
     public static function StartSite() {
-        $arr = MasterClasses::getMasterClasses();
+        $arr = MasterClasses::getAllMasterClasses();
         include_once 'view/start.php';
+    }
+
+    public static function Top() {
+        $arr = MasterClasses::getMasterClasses();
+        include_once 'view/top.php';
     }
 
     public static function AllCategory() {
@@ -17,6 +22,7 @@ class Controller {
 
     public static function MasterClassesByCatID($id) {
         $arr = MasterClasses::getMasterClassesByCategoryID($id);
+        $cat = Category::getAllCategory();
         include_once 'view/catmasterclasses.php';
     }
 
@@ -47,5 +53,14 @@ class Controller {
     public static function ReviewsCountWithAncor ($newsid) {
         $arr = Reviews::getReviewsCountByClassesID($newsid);
         ViewReviews::ReviewsCountWithAncor($arr);
+    }
+
+    public static function registerForm() {
+        include_once('view/formRegister.php');
+    }
+
+    public static function registerUser() {
+        $result = Register::registerUser();
+        include_once('view/answerRegister.php');
     }
 }

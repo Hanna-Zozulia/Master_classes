@@ -8,6 +8,18 @@ class ViewMasterClasses {
         }
     }
 
+    public static function MasterClasses($arr) {
+        foreach ($arr as $value) {
+            echo '
+            <div class="swiper-slide">
+                <a href="masterclass?id='.$value['id'].'" class="slide-card">
+                    <img src="data:image/jpeg;base64,'.base64_encode($value['picture']).'">
+                </a>
+            </div>
+                ';
+        }
+    }
+
     public static function AllMasterClasses($arr) {
         foreach($arr as $value) {
             echo "<li>".$value['title'];
