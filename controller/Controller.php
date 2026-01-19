@@ -1,13 +1,8 @@
 <?php
 class Controller {
     public static function StartSite() {
-        $arr = MasterClasses::getAllMasterClasses();
-        include_once 'view/start.php';
-    }
-
-    public static function Top() {
         $arr = MasterClasses::getMasterClasses();
-        include_once 'view/top.php';
+        include_once 'view/start.php';
     }
 
     public static function AllCategory() {
@@ -22,7 +17,6 @@ class Controller {
 
     public static function MasterClassesByCatID($id) {
         $arr = MasterClasses::getMasterClassesByCategoryID($id);
-        $cat = Category::getAllCategory();
         include_once 'view/catmasterclasses.php';
     }
 
@@ -36,12 +30,12 @@ class Controller {
     }
 
     public static function InsertReview($c, $id) {
-        Reviews::InsertReview($c, $id);
-        header('Location:masterclass?id='.$id.'#ctable');
+        Reviews::InsertReview ($c, $id);
+        header('Location:masterclasses?id='.$id.'#ctable');
     }
 
-    public static function Reviews($newsid) {
-        $arr = Reviews::getReviewsByClassesID($newsid);
+    public static function Reviews ($newsid) {
+        $arr = Reviews::getReviewsByClassesID ($newsid);
         ViewReviews::ReviewsByClasses($arr);
     }
 
@@ -50,17 +44,8 @@ class Controller {
         ViewReviews::ReviewsCount($arr);
     }
 
-    public static function ReviewsCountWithAncor($newsid) {
+    public static function ReviewsCountWithAncor ($newsid) {
         $arr = Reviews::getReviewsCountByClassesID($newsid);
         ViewReviews::ReviewsCountWithAncor($arr);
-    }
-
-    public static function registerForm() {
-        include_once('view/formRegister.php');
-    }
-
-    public static function registerUser() {
-        $result = Register::registerUser();
-        include_once('view/answerRegister.php');
     }
 }

@@ -1,12 +1,12 @@
 <html>
     <head>
         <title>Dashboard</title>
-        <link href="../public/css/bootstrap.css" rel="stylesheet">
-        <link href="../public/css/mystyle.css" rel="stylesheet">
-        <link href="../public/css/font-awesome.min.css" rel="stylesheet">
-        <script src="../public/js/jquery.min.js"></script>
-        <script src="../public/js/bootstrap.min.js"></script>
-        <script src="../public/js/ajaxupload.3.5.js" type="text/javascript"></script>
+        <link href="public/css/bootstrap.css" rel="stylesheet">
+        <link href="public/css/mystyle.css" rel="stylesheet">
+        <link href="public/css/font-awesome.min.css" rel="stylesheet">
+        <script src="public/js/jquery.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
+        <script src="public/js/ajaxupload.3.5.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="container">

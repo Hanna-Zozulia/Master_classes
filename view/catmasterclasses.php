@@ -2,17 +2,9 @@
     ob_start();
 ?>
 
-<?php
-$categoryName = '';
-foreach ($cat as $c) {
-    if ($c['id'] == $arr[0]['category_id']) {
-        $categoryName = $c['name'];
-        break;
-    }
-}
-?>
+<!--  -->
 
-<h1>Master Classes "<?= htmlspecialchars($categoryName) ?>"</h1>
+<h1>Master Classes </h1>
 <br>
 
 <?php

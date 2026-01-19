@@ -2,7 +2,7 @@
 class ViewReviews {
     public static function ReviewsForm() {
         echo '<form action="insertreview">
-                <input type="hidden" name="id" value="'.$_GET['id'].'">
+                <input type="hidden" name="id" value=" '.$_GET['id'].'">
                 Your review: <input type="text" name="review">
                 <input type="submit" value="Send">
             </form>';
@@ -20,7 +20,7 @@ class ViewReviews {
 
     public static function ReviewsCountWithAncor($value) {
         if ($value['count']>0)
-            echo '<b><a href="#ctable"/>('.$value['count'].')</a></b>';
+            echo '<b><a href="#ctable"/> ('.$value['count'].')</a></b>';
     }
 
     public static function ReviewsCount($value) {
