@@ -78,15 +78,44 @@ class modelAdminList {
     }
 
     public static function getClassesDelete($id) {
-        $test = false;
-        if (isset($_POST['save'])) {
-            $sql = "DELETE FROM `masterclasses` WHERE `masterclasses`.`id` = ".$id;
-            $db = new Database();
-            $item = $db->executeRun($sql);
-            if($item == true) {
-                $test = true;
+    $test = false;
+
+    if (isset($_POST['save'])) {
+        $db = new Database();
+
+        // Сначала проверяем, что поле masterclass_id допускает NULL
+        // ALTER TABLE reviews MODIFY masterclass_id INT NULL;
+
+        // Начинаем транзакцию, чтобы всё было безопасно
+        $db->beginTransaction();
+
+        try {
+            // 1. Обнуляем masterclass_id у всех отзывов
+            $sql1 = "UPDATE `reviews` SET `masterclass_id` = NULL WHERE `masterclass_id` = ".$id;
+            $result1 = $db->executeRun($sql1);
+            if ($result1 === false) {
+                throw new Exception("Failed to update reviews");
             }
+
+            // 2. Удаляем мастер-класс
+            $sql2 = "DELETE FROM `masterclasses` WHERE `id` = ".$id;
+            $result2 = $db->executeRun($sql2);
+            if ($result2 === false) {
+                throw new Exception("Failed to delete master class");
+            }
+
+            $db->commit();
+            $test = true;
+
+        } catch (Exception $e) {
+            $db->rollBack();
+            error_log("Error deleting master class: " . $e->getMessage());
+            echo "Ошибка удаления записи: " . $e->getMessage();
         }
-        return $test;
     }
+
+    return $test;
+}
+
+
 }

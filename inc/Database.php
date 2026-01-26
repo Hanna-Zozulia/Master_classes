@@ -1,5 +1,5 @@
 <?php
-class database {
+class Database {
     private $conn;
     private $host;
     private $user;
@@ -13,45 +13,66 @@ class database {
         $this->baseName = 'masterclass';
         $this->connect();
     }
+
     function __destruct() {
         $this->disconnect();
     }
 
+    // Подключение к базе
     function connect() {
         if (!$this->conn) {
             try {
-                $this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->baseName.'', $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-            } catch (Exception $e) {
-                die('Connection failed: ' .$e->getMessage());
+                $this->conn = new PDO(
+                    'mysql:host='.$this->host.';dbname='.$this->baseName.';charset=utf8',
+                    $this->user,
+                    $this->password,
+                    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+                );
+            } catch (PDOException $e) {
+                die('Connection failed: ' . $e->getMessage());
             }
         }
         return $this->conn;
     }
 
+    // Отключение
     function disconnect() {
-        if ($this->conn) {
-            $this->conn = null;
-        }
+        $this->conn = null;
     }
 
-    function getOne($query) {
+    // Получить одну запись
+    function getOne($query, $params = []) {
         $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $response = $stmt->fetch();
-        return $response;
+        $stmt->execute($params);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    function getAll($query) {
+    // Получить все записи
+    function getAll($query, $params = []) {
         $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $response = $stmt->fetchAll();
-        return $response;
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function executeRun($query) {
-        $response = $this->conn->exec($query);
-        return $response;
+    // Выполнить запрос (INSERT, UPDATE, DELETE)
+    function executeRun($query, $params = []) {
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute($params);
+        return $stmt->rowCount(); // возвращает кол-во затронутых строк
+    }
+
+    // Транзакция - начать
+    function beginTransaction() {
+        $this->conn->beginTransaction();
+    }
+
+    // Транзакция - подтвердить
+    function commit() {
+        $this->conn->commit();
+    }
+
+    // Транзакция - откатить
+    function rollBack() {
+        $this->conn->rollBack();
     }
 }
