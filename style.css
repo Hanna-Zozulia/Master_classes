@@ -169,14 +169,18 @@ a {
 .master-image {
   flex: 1;
   width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
 .master-image img {
-  margin-top: 20px;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 90%;
   object-fit: cover;
   border-radius: 5%;
+  
 }
 
 .master-content {
@@ -391,10 +395,10 @@ h1{
 
 .block_ul li {
   margin-bottom: 30px;
-  font-family: 'Noto Serif', serif;  /* красивый шрифт */
-  font-size: 1rem;                   /* размер текста */
-  line-height: 1.5;                  /* межстрочный интервал */
-  color: #f0f0f0;                        /* мягкий темный цвет */ 
+  font-family: 'Noto Serif', serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f0f0f0;
 }
 
 .block_3 {
@@ -405,20 +409,18 @@ h1{
 
 .masterclasses-row {
   display: flex;
-  flex-wrap: wrap;           /* перенос на новые строки на маленьких экранах */
-  gap: 0px;                 /* расстояние между карточками */
-  justify-content: center;   /* центрирование ряда */
+  flex-wrap: wrap;
+  gap: 0px;
+  justify-content: center;
 }
 
 .masterclasses-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* верхние элементы сверху, .para внизу */
+  justify-content: space-between;
   align-items: center;
   width: 180px;
-  height: 450px; 
-  margin: 2px;              /* фиксированная высота карточки */
-  /* padding: 10px; */
+  margin: 2px;
   text-decoration: none;
   color: #333;
   background-color: #fff;
@@ -444,7 +446,6 @@ h1{
   font-family: 'Noto Serif', serif;
   font-size: 1rem;
   text-align: center;
-  margin-bottom: 10px;
   color: #000;
 }
 
@@ -471,7 +472,7 @@ h1{
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд */
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   width: 100%;
   padding: 20px 30px;
@@ -487,65 +488,60 @@ h1{
 }
 
 .review-card::before {
-    content: "“";
-    position: absolute;
-    top: -10px;
-    left: 18px;
-    font-size: 80px;
-    color: #404040;
-    font-family: serif;
+  content: "“";
+  position: absolute;
+  top: -10px;
+  left: 18px;
+  font-size: 80px;
+  color: #404040;
+  font-family: serif;
 }
 
 .review-text {
   width: 100%;
-  white-space: normal;       /* разрешаем перенос строк */
-  word-wrap: break-word;     /* длинные слова тоже будут переноситься */
-  word-break: break-word;    /* дополнительная страховка */
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
   font-size: 16px;
   line-height: 1.6;
   color: #333;
   margin-bottom: 20px;
   padding-left: 40px;
-  /* background-color: #525050; */
 }
-
 
 .review-date {
   font-size: 13px;
   padding-top: 10px;
   color: #999;
   text-align: right;
-  /* background-color: #3c0b2c; */
 }
 
-/* Адаптив */
 @media (max-width: 900px) {
-    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 550px) {
-    .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
 }
 
-
 .courselink{
-    color: black;
-    font-weight: 550;
+  color: black;
+  font-weight: 550;
 }
 
 .courselink:hover{
-    color: blue;
-    text-decoration: underline;
+  color: blue;
+  text-decoration: underline;
 }
 
 .control{
-    color: black;
-    margin: 0;
-    padding: 0;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
 th{
-    text-align: center;
+  text-align: center;
 }
 
 .all_reviews {
