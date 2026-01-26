@@ -11,7 +11,7 @@
     ?>
 
     <div class="alert alert-info">
-        <strong>Запись добавлена.</strong> <a href="masterclassesAdmin">Список новостей</a>
+        <strong>Entry added.</strong> <a href="masterclassesAdmin">List of master classes</a>
     </div>
 
     <?php
@@ -19,7 +19,7 @@
     ?>
 
     <div class="alert alert-warning">
-        <strong>Ошибка добавления записи!</strong> <a href="masterclassesAdmin">Список новостей</a>
+        <strong>Error adding record!</strong> <a href="masterclassesAdmin">List of master classes</a>
     </div>
 
     <?php
@@ -79,10 +79,10 @@
             </tr>
                 <td colspan="2">
                     <button type="submit" class="btn btn-primary" name="save">
-                        <span class="glyphicon glyphicon-plus"></span> Сохранить
+                        <span class="glyphicon glyphicon-plus"></span> Save
                     </button>
                     <a href="masterclassesAdmin" class="btn btn-large btn-success">
-                        <i class="glyphicon glyphicon-backward"></i> &nbsp; Назад к списку
+                        <i class="glyphicon glyphicon-backward"></i> &nbsp; Back to list
                     </a>
                 </td>
             </tr>

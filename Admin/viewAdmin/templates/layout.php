@@ -45,7 +45,7 @@
                 <?php echo $content; ?>
             </div>
             <footer class="footer">
-                <p>Master classes &copy;</p>
+                <p style="display: block; text-align:center; margin-top: 300px;">Master classes &copy;</p>
             </footer>
         </div>
     </body>

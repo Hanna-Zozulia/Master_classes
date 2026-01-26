@@ -3,7 +3,7 @@
 <h2>Master classes List</h2>
 <div class="container" style="min-height: 400px;">
     <div style="margin: 20px;">
-        <a class="btn btn-primary" href="masterclassesAdd" role="button">Добавить новость</a>
+        <a class="btn btn-primary" href="masterclassesAdd" role="button">Add a master class</a>
     </div>
     <div class="col-md-11">
         <table class="table table-bordered table-responsive">

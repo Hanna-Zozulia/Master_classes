@@ -11,7 +11,7 @@
     ?>
 
     <div class="alert alert-info">
-        <strong>Запись изменина.</strong> <a href="masterclassesAdmin">Список новостей</a>
+        <strong>The record has been changed.</strong> <a href="masterclassesAdmin">List of master classes</a>
     </div>
 
     <?php
@@ -19,7 +19,7 @@
     ?>
 
     <div class="alert alert-warning">
-        <strong>Ошибка изменения записи!</strong> <a href="masterclassesAdmin">Список новостей</a>
+        <strong>Error updating record!</strong> <a href="masterclassesAdmin">List of master classes</a>
     </div>
 
     <?php
@@ -88,10 +88,10 @@
             <tr>
                 <td colspan="2">
                     <button type="submit" class="btn btn-primary" name="save">
-                        <span class="glyphicon glyphicon-plus"></span> Изменить
+                        <span class="glyphicon glyphicon-plus"></span> Change
                     </button>
                     <a href="masterclassesAdmin" class="btn btn-large btn-success">
-                        <i class="glyphicon glyphicon-backward"></i> &nbsp; Назад к списку
+                        <i class="glyphicon glyphicon-backward"></i> &nbsp; Back to list
                     </a>
                 </td>
             </tr>
