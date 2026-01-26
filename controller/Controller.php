@@ -2,6 +2,8 @@
 class Controller {
     public static function StartSite() {
         $arr = MasterClasses::getAllMasterClasses();
+        $pop = MasterClasses::getPopMasterClasses();
+        $rev = Reviews::getReviewsPop();
         include_once 'view/start.php';
     }
 

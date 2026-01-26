@@ -1,13 +1,30 @@
 /* =============================================================================== */
 body {
-  margin:0;
-  font-family: Arial; 
-  }
-h2 {
-  font-family: monospace;
-  color: #606060;
-  
+  background-color: #000;
+  width: 100%;
+  margin: 0;
+  font-family: 'Noto Serif', serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
+
+h1 {
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 20px 0; 
+  margin-top: 35px;
+}
+
+h2 {
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin: 10px;
+}
+
 
 /* HEADER =================================================================== */
 
@@ -17,11 +34,13 @@ nav {
   margin: auto;
   padding: auto;
 }
+
 ul {
   list-style: none; 
   margin: 0;
   padding: 0;
 }
+
 .topmenu > li {
   display: inline-block;
   margin-right: auto;
@@ -30,6 +49,7 @@ ul {
   padding: auto;
   text-align: center;
 }
+
 .topmenu > li:last-child {
   margin-right: 0;
 }
@@ -44,24 +64,20 @@ ul {
   float: right;
 }
 
-/*img {
-    min-width: 30%;
-}*/
-
 a {
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-  outline: none;
- 
-  transition: .5s linear;
-  
+  outline: none; 
+  transition: .5s linear; 
 }
+
 .fa {
   font-family: "FontAwesome";
   color: inherit;
   padding-left: 10px;
 }
+
 .submenu {
   position: absolute;
   top: 100%;
@@ -71,9 +87,19 @@ a {
   transition: 0.5s ease-in-out;
   text-align: center;
 }
-.one ul {
-  background: #AB0000;
+
+.one {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
 }
+
+.one ul {
+  background: #333333;
+}
+
 .one ul a {
   color: white;
   font-weight: 600;
@@ -85,144 +111,245 @@ a {
   transition: 0.3s;
   text-decoration: underline;
 }
+
 .one .submenu {
   display: none;
-  background: #c40202;
+  background: #333333;
 }
+
 .one ul li:hover .submenu {
   display: block;
 }
-.logo{
-  width: auto;
-  color: white;
-  font-size: 1.2em;
-        margin-left: 15%;
-}
 
 .submenuunit{
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
 }
 
+.master-list {
+  list-style: none;
+  margin-top: 20px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  row-gap: 12px;
+}
 
+.master-link {
+  display: block;
+  padding: 12px 18px;
+  background: #f7f7f7;
+  border-radius: 12px;
+  color: #222;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.master-link:hover {
+  background: gold;
+  color: #222;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  .master-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.master-page {
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin-top: 15px;
+}
+
+.master-image {
+  flex: 1;
+  width: 400px;
+}
+
+.master-image img {
+  margin-top: 20px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.master-content {
+  flex: 1;
+  padding: 30px 50px;
+}
+
+.master-content .description {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #fff;
+}
+
+.master-content .price {
+  font-size: 26px;
+  font-weight: bold;
+  color: #4EBE4C;
+  margin-bottom: 10px;
+}
+
+.master-content .date {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.top3-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;                 
+  flex-wrap: wrap;
+}
+
+.top3-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.top3-item img {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.top3-item h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.top3-item a {
+  color: #333;
+}
+
+.top3-item a:hover {
+  color: gold;
+}
 
 section{
-    padding: 2%;
-    display: flex;
-    align-content: center;
-    justify-content: center;
+  padding: 2%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 .search{
-    margin-left: 250px;
-    padding: 0;
-    display: flex;
-    flex-flow: row;
-    width: auto;
+  margin-left: 250px;
+  padding: 0;
+  display: flex;
+  flex-flow: row;
+  width: auto;
 }
 
 .searchbar{
-    height: 25px;
-    margin-bottom: 3px;
-    width: 300px;
-    border-radius: 4px;
-    padding: 2px;
-    border: 0;
+  height: 25px;
+  margin-bottom: 3px;
+  width: 300px;
+  border-radius: 4px;
+  padding: 2px;
+  border: 0;
 }
 
-table{
-    border: 1px solid black;
-    border-radius: 5px;
-    display: flex;
-    width: auto;
-    padding: 0;
+.review-form {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.review-form label {
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+}
+
+.review-form textarea {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.review-form textarea:focus {
+  outline: none;
+  border-color: #4EBE4C;
+  box-shadow: 0 0 5px rgba(46,125,50,0.5);
+}
+
+.review-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #4EBE4C;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.review-form button:hover {
+  background-color: #1b5e20;
+  transform: translateY(-2px);
+}
+
+p {
+  word-wrap: break-word;
+  display: flex;
   font-size: 1.2rem;
-}
-
-td{
-    border: 1px solid black;
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-}
-
-tr{
-    padding: 0;
-}
-
-th{
-    background-color: #4EBE4C;
-    padding: 20px;
-    margin: 0;
-    border: 1px solid black;
-}
-
-.btn{
-   background-color: #43E16F;
-   border-radius: 3px;
-   margin-left: 10px;
-   height: 30px;
-   border: 0;
-   color: white;
-   font-weight: 600;
-}
-
-p{
-    word-wrap: break-word;
-    display: flex;
-  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 15px;
 }
 
 h1{
-    width: auto;
-    display: inline-block;
+  width: auto;
+  display: inline-block;
+}
+
+.container {
+  width: 100%;
 }
 
 .block {
   width: 100%;
   height: 100vh;
-  /* padding-left: 20px; */
-  background-color: red;
 }
 
 .h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 50px;
-  background-color: #737272;
-}
-
-.h1 h1 {
-  background-color: #fff;
-}
-
-.h2 {
-  background-color: #9d2292;
 }
 
 .vertical-slider {
-  height: 600px;
+  height: 100vh;
   overflow: hidden;
   position: relative;
 }
 
 .slider-track {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 ряда */
-    gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
 }
 
-/* карточка */
-.slide-card {
-  background: #fff;
-  /* text-align: center; */
-  text-decoration: none;
-  color: #000;
-  /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
-}
-
-/* разная высота карточек */
 .slide-card img:nth-child(3n) {
   height: 380px;
 }
@@ -235,6 +362,7 @@ h1{
 
 .slide-card img {
   width: 100%;
+  border-radius: 5%;
   object-fit: cover;
 }
 
@@ -243,9 +371,162 @@ h1{
   100% { transform: translateY(-100%); }
 }
 
-.swiper-slide {
-  width: 50%;
+.block_2 {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.block_ul {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block_ul ul{
+  list-style-type: disc;
+}
+
+.block_ul li {
+  margin-bottom: 30px;
+  font-family: 'Noto Serif', serif;  /* красивый шрифт */
+  font-size: 1rem;                   /* размер текста */
+  line-height: 1.5;                  /* межстрочный интервал */
+  color: #f0f0f0;                        /* мягкий темный цвет */ 
+}
+
+.block_3 {
+  margin-top: 30px;
+  width: 100%;
+  height: 500px;
+}
+
+.masterclasses-row {
+  display: flex;
+  flex-wrap: wrap;           /* перенос на новые строки на маленьких экранах */
+  gap: 0px;                 /* расстояние между карточками */
+  justify-content: center;   /* центрирование ряда */
+}
+
+.masterclasses-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* верхние элементы сверху, .para внизу */
+  align-items: center;
+  width: 180px;
+  height: 450px; 
+  margin: 2px;              /* фиксированная высота карточки */
+  /* padding: 10px; */
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.masterclasses-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-decoration: none;
+}
+
+.masterclasses-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.masterclasses-card .title {
+  font-family: 'Noto Serif', serif;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.masterclasses-card .title:hover {
+  color: gold;
+  text-decoration: none;
+}
+
+.masterclasses-card .para {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.block_4 {
+  width: 100%;
+  height: 500px;
+  margin-top: 100px;
+}
+
+.block_4 h2 {
+  margin-bottom: 30px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд */
+  gap: 24px;
+  width: 100%;
+  padding: 20px 30px;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 26px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform .3s ease, box-shadow .3s ease;
+  position: relative;
+}
+
+.review-card::before {
+    content: "“";
+    position: absolute;
+    top: -10px;
+    left: 18px;
+    font-size: 80px;
+    color: #404040;
+    font-family: serif;
+}
+
+.review-text {
+  width: 100%;
+  white-space: normal;       /* разрешаем перенос строк */
+  word-wrap: break-word;     /* длинные слова тоже будут переноситься */
+  word-break: break-word;    /* дополнительная страховка */
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+  padding-left: 40px;
+  /* background-color: #525050; */
+}
+
+
+.review-date {
+  font-size: 13px;
+  padding-top: 10px;
+  color: #999;
+  text-align: right;
+  /* background-color: #3c0b2c; */
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 550px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+}
+
 
 .courselink{
     color: black;
@@ -265,4 +546,10 @@ h1{
 
 th{
     text-align: center;
+}
+
+.all_reviews {
+  margin-top: 60px;
+  margin-bottom: 0px;
+  text-align: center;
 }

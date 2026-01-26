@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- <script src="public/js/slider.js"></script> -->
+    <script src="public/js/slider.js"></script>
 
     <meta charset="utf-8">
 </head>
@@ -27,7 +27,7 @@
             <li><a href="./">Home</a></li>
             <li><a href="top3">TOP 3</a></li>
             <li><a href="testError">Info</a></li>
-            <li><a href="registerForm">Registration</a></li>
+            <li><a href="registerForm" target="_blank">Registration</a></li>
         </ul>
     </nav>
 
@@ -44,7 +44,7 @@
     </section>
 
     <hr>
-    <p style="display: block; text-align:center;">Master Classes &copy;</p>
+    <p style="display: block; text-align:center; margin-top: 40px;">Master Classes &copy;</p>
     
 </body>
 </html>

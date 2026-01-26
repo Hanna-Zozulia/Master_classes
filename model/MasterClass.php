@@ -14,6 +14,13 @@ class MasterClasses {
         return $arr;
     }
 
+    public static function getPopMasterClasses() {
+        $query = "SELECT * FROM masterclasses ORDER BY id DESC LIMIT 6";
+        $db = new Database();
+        $pop = $db->getAll($query);
+        return $pop;
+    }
+
     public static function getMasterClassesByCategoryID($id) {
         $query = "SELECT * FROM `masterclasses` WHERE category_id=".(string)$id." ORDER BY id DESC;";
         $db = new Database();

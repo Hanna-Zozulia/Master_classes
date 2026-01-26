@@ -20,4 +20,11 @@
             $c = $db->getOne($query);
             return $c;
         }
+
+        public static function getReviewsPop() {
+            $query = "SELECT * FROM reviews ORDER BY id DESC LIMIT 5";
+            $db = new Database();
+            $rev = $db->getAll($query);
+            return $rev;
+    }
     }

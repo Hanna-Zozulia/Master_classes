@@ -1,20 +1,28 @@
 <?php
 class ViewReviews {
     public static function ReviewsForm() {
-        echo '<form action="insertreview">
+            echo '<form action="insertreview" class="review-form">
                 <input type="hidden" name="id" value="'.$_GET['id'].'">
-                Your review: <input type="text" name="review">
-                <input type="submit" value="Send">
+
+                <label for="review">Your review of the master class:</label>
+                <textarea name="review" rows="5" placeholder="Write your review here..." required></textarea>
+
+                <button type="submit">Send</button>
             </form>';
     }
 
     public static function ReviewsByClasses($arr) {
         if($arr!=null) {
-            echo '<table id="ctable"><th>Review</th><th>Date</th>';
+            echo '<div class="reviews-grid">';
             foreach($arr as $value) {
-                echo '<tr><td>'.$value['text']."</td><td>".$value['date']."</td></tr>";
+                echo '<div class="review-card">
+                <p class="review-text">'.$value['text'].'</p>
+                <p class="review-date">'.date('d.m.Y', strtotime($value['date'])).'</p>
+            </div>';
             }
-            echo '</table>';
+            echo '</div>';
+         } else {
+        echo '<p>No reviews yet.</p>';
         }
     }
 
