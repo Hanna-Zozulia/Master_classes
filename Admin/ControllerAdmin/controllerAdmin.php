@@ -7,7 +7,7 @@
         public static function loginAction() {
             $logIn = modelAdmin::userAuthentication();
             if(isset($logIn) and $logIn==true) {
-                $_SESSION['admin_logged_in'] = true; // Mark user as logged in
+                $_SESSION['admin_logged_in'] = true;
                 include_once('viewAdmin/startAdmin.php');
             } else {
                 $_SESSION['errorString']='Incorrect username or password';
